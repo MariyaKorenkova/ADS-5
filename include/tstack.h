@@ -15,7 +15,7 @@ class TStack {
     return t == -1;
   }
   bool isFull() const {
-    return t == _size - 1;
+    return t == kSize - 1;
   }
   T getT() const {
     return arr[t];

@@ -12,7 +12,7 @@ int Priority(char op) {
     case ')':
       return 1;
     case '+': case '-':
-      return 2
+      return 2;
     case '*': case '/':
       return 3;
     default:
@@ -43,7 +43,7 @@ std::string infx2pstfx(const std::string& inf) {
     } else if (ch == '(') {
       stack.push(ch);
     } else if (ch == ')') {
-      while (!stack.isEmpty() && stack.getTop() != '(') {
+      while (!stack.isEmpty() && stack.getT() != '(') {
         Postfix(stack, px);
       }
       if (!stack.isEmpty()) {

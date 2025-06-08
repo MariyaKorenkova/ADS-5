@@ -68,7 +68,7 @@ int eval(const std::string& pref) {
   for (char ch : pref) {
     if (ch == ' ') {
       if (!px.empty()) {
-        stack.push(std::stoi(token));
+        stack.push(std::stoi(px));
         px.clear();
       }
       continue;
@@ -77,7 +77,7 @@ int eval(const std::string& pref) {
       px += ch;
     } else {
       if (!px.empty()) {
-        stack.push(std::stoi(token));
+        stack.push(std::stoi(px));
         px.clear();
       }
       int b = stack.top();
@@ -85,17 +85,17 @@ int eval(const std::string& pref) {
       int a = stack.top();
       stack.pop();
       switch (ch) {
-        case '+': 
-          stack.push(a + b); 
+        case '+':
+          stack.push(a + b);
           break;
-        case '-': 
-          stack.push(a - b); 
+        case '-':
+          stack.push(a - b);
           break;
-        case '*': 
-          stack.push(a * b); 
+        case '*':
+          stack.push(a * b);
           break;
-        case '/': 
-          stack.push(a / b); 
+        case '/':
+          stack.push(a / b);
           break;
       }
     }

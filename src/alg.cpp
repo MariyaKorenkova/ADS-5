@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include "tstack.h"
+#include <stack>
 
 int Priority(char op) {
   switch (op) {

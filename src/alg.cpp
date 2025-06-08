@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include <stack>
+#include <cctype>
 #include "tstack.h"
 
 int Priority(char op) {
@@ -23,7 +24,7 @@ void Postfix(TStack<char, 100>& stack, std::string& px) {
   if (!px.empty() && px.back() != ' ') {
     px += ' ';
   }
-  px += stack.getTop();
+  px += stack.getT();
   stack.pop();
 }
 
@@ -50,7 +51,7 @@ std::string infx2pstfx(const std::string& inf) {
       }
     } else if (Priority(ch) > 1) {
       while (!stack.isEmpty() &&
-        Priority(stack.getTop()) >= Priority(ch)) {
+        Priority(stack.getT()) >= Priority(ch)) {
         Postfix(stack, px);
       }
       stack.push(ch);

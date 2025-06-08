@@ -1,8 +1,8 @@
 // Copyright 2025 NNTU-CS
 #include <string>
 #include <map>
-#include "tstack.h"
 #include <stack>
+#include "tstack.h"
 
 int Priority(char op) {
   switch (op) {

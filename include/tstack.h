@@ -16,7 +16,7 @@ public:
   bool isFull() const {
     return t == _size - 1;
   }
-  T getTop() const {
+  T getT() const {
     return arr[t];
   }
   void push(const T& value) {
